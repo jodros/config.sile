@@ -13,7 +13,7 @@ dependencies = {"lua >= 5.1", "datafile", "lua-toml", "luafilesystem"}
 build = {
     type = "builtin",
     modules = {
-        ["sile.classes.plain"] = "classes/plain.lua",
+        ["sile.classes.cfg-plain"] = "classes/cfg-plain.lua",
         ["sile.core.gatherer"] = "core/gatherer.lua",
    },
     copy_directories = {"config"}
