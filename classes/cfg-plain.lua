@@ -20,7 +20,7 @@ function class:_init(options)
 
   plain._init(self, options)
 
-  for name in ipairs(config.packages) do 
+  for _, name in ipairs(config.scratch.packages) do 
     self:loadPackage(name)
   end
 end
