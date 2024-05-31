@@ -1,4 +1,5 @@
 local lfs = require "lfs"
+local inspect = require"inspect" 
 local toml = require 'toml'
 local datafile = require "datafile"
 
@@ -82,6 +83,7 @@ local function geToml()
         config = merge(config, super(settings))
     end
 
+    if config.debug.showconfig then print(inspect(config)) end
     return config
 end
 

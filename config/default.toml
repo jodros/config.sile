@@ -1,9 +1,10 @@
-[options]
-
-[settings]
-
-[scratch]
 packages = []
 
+[options]
+[fonts]
+[settings]
 [frames]
+[scratch.firstContentFrame] # don't delete this! still looking for a solution... 
+[debug]
+showconfig = false # print a table with all contents of this file and settings.toml every time SILE is run
 
