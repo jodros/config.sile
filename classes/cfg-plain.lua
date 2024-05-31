@@ -14,19 +14,18 @@ class.defaultFrameset = config.frames.defaultFrameset or config.frames.right or 
 
 function class:_init(options)
   options = merge(options, config.options)
-
-  for name, setting in pairs(config.settings) do 
-    SILE.settings:set(name, setting)
-  end
-
   plain._init(self, options)
   
+  for _, name in ipairs(config.packages) do 
+    self:loadPackage(name)
+  end
+
   for id, frames in pairs(config.frames) do    
     self:defineMaster({ id = id, firstContentFrame = config.scratch.firstContentFrame[id] or "content", frames = frames })
   end
 
-  for _, name in ipairs(config.packages) do 
-    self:loadPackage(name)
+  for name, setting in pairs(config.settings) do 
+    SILE.settings:set(name, setting)
   end
 
   self:loadPackage("twoside", { oddPageMaster = "right", evenPageMaster = "left" })
