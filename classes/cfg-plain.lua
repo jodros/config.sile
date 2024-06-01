@@ -13,9 +13,9 @@ class._name = "cfg-plain"
 class.defaultFrameset = config.frames.defaultFrameset or config.frames.right or plain.defaultFrameset
 
 function class:_init(options)
-  options = merge(options, config.options)
+  options = merge(config.options, options)
   plain._init(self, options)
-  
+
   for _, name in ipairs(config.packages) do 
     self:loadPackage(name)
   end
