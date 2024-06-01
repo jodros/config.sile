@@ -33,6 +33,12 @@ function class:_init(options)
   if self:currentMaster() == "right" then
       self:mirrorMaster("right", "left")
   end
+
+  if self.packages.pdf then
+    for key, value in config.meta do
+      SILE.call("pdf:metadata", { key = key, value = value})
+    end
+  end
 end
 
 return class
