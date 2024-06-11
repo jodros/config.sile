@@ -6,10 +6,10 @@ local datafile = require "datafile"
 toml.strict = false -- to enable more lua-friendly features (like mixed arrays)
 
 local function fileExist(f)
-    if io.open(f) ~= nil then
-        return true
-    else
-        return false
+    if f == nil or not io.open(f) then
+      return false
+    else 
+      return true
     end
 end
 
