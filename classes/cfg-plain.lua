@@ -4,7 +4,10 @@ local gatherer = require("core.gatherer")
 local config = gatherer.geToml()
 local merge = gatherer.merge
 
-SILE.scratch = config.scratch
+for item, content in pairs(config.scratch) do
+  SILE.scratch[item] = content
+end
+
 SILE.scratch.fonts = config.fonts
 
 local class = pl.class(plain)
@@ -15,6 +18,8 @@ class.defaultFrameset = config.frames.defaultFrameset or config.frames.right or 
 function class:_init(options)
   options = merge(config.options, options)
   plain._init(self, options)
+
+  SILE.languageSupport.loadLanguage(config.settings["document.language"])
 
   for _, name in ipairs(config.packages) do 
     self:loadPackage(name)
@@ -45,4 +50,3 @@ function class:finish()
 end
 
 return class
-
