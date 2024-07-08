@@ -8,8 +8,6 @@ for item, content in pairs(config.scratch) do
   SILE.scratch[item] = content
 end
 
-SILE.scratch.fonts = config.fonts
-
 local class = pl.class(plain)
 class._name = "cfg-plain"
 
@@ -38,6 +36,14 @@ function class:_init(options)
   if self:currentMaster() == "right" then
       self:mirrorMaster("right", "left")
   end
+
+  self:registerPostinit(function()
+    if self.packages['font-fallback'] then
+      for _, font in ipairs(config.fonts) do
+        SILE.call("font:add-fallback", { family = font })
+      end
+    end
+  end)
 end
 
 function class:finish()
