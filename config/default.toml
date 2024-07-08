@@ -1,9 +1,9 @@
 packages = []
+fonts = []
 
 [meta]
 author = ""
 [options]
-[fonts]
 [settings]
 [frames]
 [scratch.firstContentFrame] # don't delete this! still looking for a solution... 
