@@ -1,6 +1,7 @@
 # config.sile
 
-The support for configuration files was originally made for my first attempt to create a module for SILE, the now archived repo [extend.sile](https://github.com/jodros/extend.sile)... 
+The support for configuration files was originally made for my first attempt to create a module for SILE, the now archived repo [extend.sile](https://github.com/jodros/extend.sile)...
+
 
 The idea is to pass any options, settings and even framesets through a `toml` file. Actually, two files, the default being stored in `~/.config/sile/default.toml`, and the second one in user's working directory, called `settings.toml`, which could overwrite anything in the default.
 
@@ -57,5 +58,5 @@ So one could call `SILE.scratch.frames.right` when creating a new master.
 
 ## Installing
 
-Just run `luarocks install --server=https://luarocks.org/dev config.sile`, or clone this repository and then run `luarocks --local make`. LuaRocks will automatically install the dependencies if you don't have them yet...
+Just clone this repository and then run `luarocks --local make`. LuaRocks will automatically install the dependencies if you don't have them yet...
 
