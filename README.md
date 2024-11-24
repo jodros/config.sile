@@ -52,10 +52,6 @@ height = "0"
 
 So one could call `SILE.scratch.frames.right` when creating a new master.
 
-## TODO
-
-- add support to `yaml` and others...
-
 ## Installing
 
 Just clone this repository and then run `luarocks --local make`. LuaRocks will automatically install the dependencies if you don't have them yet...
